@@ -8,9 +8,11 @@ import pythonanywheredetails as PACreds #* file with your pythonanywhere credent
 
 
 
-options = ChromeOptions()
-options.add_argument("--headless=new")
-driver = webdriver.Chrome(options=options)
+#options = ChromeOptions()
+#options.add_argument("--headless=new")
+#driver = webdriver.Chrome(options=options)
+
+driver = webdriver.Chrome() 
 
 
 if(PACreds.username is None) or (PACreds.password is None) or (PACreds.linktobot is None):
@@ -42,9 +44,9 @@ run = driver.find_element(By.CLASS_NAME, "run_button")
 run.click()
 print("run pressed")
 
-time.sleep(30)
+time.sleep(10)
 
-print("30 seconds passed, logging off now!")
+print("10 seconds passed, logging off now!")
 menu = driver.find_element(By.CLASS_NAME, "navbar-toggle")
 menu.click()
 logout = driver.find_element(By.CLASS_NAME, "logout_link")
